@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+body {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loading {
+  font-family: "Poppins", sans-serif;
+  font-size: 60px;
+  text-transform: uppercase;
+  color:#F1F1E6;
+  margin: 50px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.column {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 60px;
+  color:#F1F1E6;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 13px #000;
+  text-align: center;
+  line-height: 1.1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.users-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px 15px;
+}
+
+.user-info {
+  background-color: #F1F1E6;
+  width: 300px;
+  height: 360px;
+  padding: 20px;
+  margin: 20px 0px;
+  border: none;
+  border-radius: 15px;
+  -webkit-box-shadow: 2px 2px 29px 0px rgba(0,0,0,0.65);
+  -moz-box-shadow: 2px 2px 29px 0px rgba(0,0,0,0.65);
+  box-shadow: 2px 2px 29px 0px rgba(0,0,0,0.65);
+}
+
+.user-photo {
+  border-radius: 15px;
+  object-fit: cover;
+  margin: -50px 0px 7px;
+  border: none;
+  padding: 5px;
+  background-color: #F1F1E6;
+  -webkit-box-shadow: 1px -7px 20px 8px rgba(0,0,0,0.49);
+  -moz-box-shadow: 1px -7px 20px 8px rgba(0,0,0,0.49);
+  box-shadow: 1px -7px 20px 8px rgba(0,0,0,0.49);
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #051937;
+}
+
+.other-data {
+  font-size: 15px;
+  margin: 5px 0px;
+  color: #424656;
+}
+
+.icon {
+  font-size: 18px;
+  color:#007789;
+  margin-right: 5px;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+.bottomInfo {
+  color: #00bf72;
+  font-size: 14px;
+}
+
+a:hover {
+  color:#fff;
+}
+
+@media all and (max-width: 350px) {
+  .user-info {
+    width: 270px;
+    height: 370px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 50px;
   }
 }

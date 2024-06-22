@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import { Component } from "react";
 import './App.css';
+import { User } from "./User";
+import { BottomInfo } from "./BottomInfo";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      users: []
+    }
+  }
+
+  async componentDidMount() {
+    const url = "https://randomuser.me/api/?results=30";
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({users: data.results});
+  }
+
+  render() {
+    return <div>
+        {!this.state.users ? <p className="loading">LOADING ...</p> :
+        <div className="column">
+          <h1>Random Users</h1>
+      <div className="users-container">
+        {this.state.users.map((user, index) => (
+          <User user={user} key={index} />
+        ))}
+      </div>
+      <BottomInfo />
+      </div>  
+      }          
+      </div>
+  }
+
 }
-
-export default App;
